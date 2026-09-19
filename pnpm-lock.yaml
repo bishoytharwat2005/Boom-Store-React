@@ -30,8 +30,13 @@ importers:
         specifier: ^19.2.7
         version: 19.2.7(react@19.2.7)
       react-router:
+<<<<<<< HEAD
         specifier: ^8.4.0
         version: 8.4.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+=======
+        specifier: ^8.3.0
+        version: 8.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+>>>>>>> 9f34afb7cd128d6fa57c7bb6728a09df5cf6ea92
       tailwind-merge:
         specifier: ^3.6.0
         version: 3.6.0
@@ -933,8 +938,13 @@ packages:
     peerDependencies:
       react: ^19.2.7
 
+<<<<<<< HEAD
   react-router@8.4.0:
     resolution: {integrity: sha512-JtydAkBvU9UTEe5qNC+POhu+ZBNM7rlKY2IegwXc7Idj7xfRG16x5RZrw3mju+XlqBxfvb2ky9P3jUp9WyWC1g==}
+=======
+  react-router@8.3.0:
+    resolution: {integrity: sha512-qyPMvW83jGIct3yiieisxdk9M745anqhpIMKN5m1t6yBMfgVPpt77aHOqs5fUlEJRMCGffg9BaQLH9oPVOL7xQ==}
+>>>>>>> 9f34afb7cd128d6fa57c7bb6728a09df5cf6ea92
     engines: {node: '>=22.22.0'}
     peerDependencies:
       react: '>=19.2.7'
@@ -1822,9 +1832,14 @@ snapshots:
       react: 19.2.7
       scheduler: 0.27.0
 
+<<<<<<< HEAD
   react-router@8.4.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
     dependencies:
       '@remix-run/route-pattern': 0.22.1
+=======
+  react-router@8.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+    dependencies:
+>>>>>>> 9f34afb7cd128d6fa57c7bb6728a09df5cf6ea92
       cookie-es: 3.1.1
       react: 19.2.7
     optionalDependencies:

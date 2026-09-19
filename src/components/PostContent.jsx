@@ -42,7 +42,9 @@ function PostContent() {
 
     if (searchValue) {
       result = result.filter((product) =>
-        product.title?.toLowerCase().includes(searchValue)
+        product.title
+          ?.toLowerCase()
+          .includes(searchValue)
       );
     }
 
@@ -53,11 +55,19 @@ function PostContent() {
     }
 
     if (sort === "price-low") {
-      result.sort((a, b) => a.price - b.price);
+      result.sort(
+        (a, b) =>
+          Number(a.price || 0) -
+          Number(b.price || 0)
+      );
     }
 
     if (sort === "price-high") {
-      result.sort((a, b) => b.price - a.price);
+      result.sort(
+        (a, b) =>
+          Number(b.price || 0) -
+          Number(a.price || 0)
+      );
     }
 
     if (sort === "rating") {
@@ -91,17 +101,20 @@ function PostContent() {
         <section className="bg-slate-950 px-4 py-20 sm:px-6">
           <div className="container mx-auto">
             <div className="h-12 w-3/4 animate-pulse rounded-xl bg-slate-800" />
+
             <div className="mt-5 h-6 w-1/2 animate-pulse rounded-xl bg-slate-800" />
           </div>
         </section>
 
         <div className="container mx-auto grid grid-cols-1 gap-6 px-4 py-10 sm:px-6 md:grid-cols-2 xl:grid-cols-3">
-          {Array.from({ length: 6 }).map((_, index) => (
-            <div
-              key={index}
-              className="h-[500px] animate-pulse rounded-2xl bg-gray-200"
-            />
-          ))}
+          {Array.from({ length: 6 }).map(
+            (_, index) => (
+              <div
+                key={index}
+                className="h-[500px] animate-pulse rounded-2xl bg-gray-200"
+              />
+            )
+          )}
         </div>
       </div>
     );
@@ -123,6 +136,7 @@ function PostContent() {
         </p>
 
         <Button
+          type="button"
           onClick={refetch}
           className="gap-2 bg-violet-600 hover:bg-violet-700"
         >
@@ -156,13 +170,14 @@ function PostContent() {
               </h1>
 
               <p className="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
-                Explore our collection of quality products,
-                find your favorites, and enjoy a simple
-                shopping experience.
+                Explore our collection of quality
+                products, find your favorites, and enjoy a
+                simple shopping experience.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button
+                  type="button"
                   size="lg"
                   onClick={scrollToProducts}
                   className="h-12 gap-2 bg-violet-600 px-7 text-base shadow-lg shadow-violet-950/30 hover:bg-violet-700"
@@ -172,6 +187,7 @@ function PostContent() {
                 </Button>
 
                 <Button
+                  type="button"
                   size="lg"
                   variant="outline"
                   onClick={() => {
@@ -372,6 +388,7 @@ function PostContent() {
                 </select>
 
                 <Button
+                  type="button"
                   variant="outline"
                   onClick={resetFilters}
                   className="gap-2 border-slate-200"
@@ -396,7 +413,9 @@ function PostContent() {
               products
             </p>
 
-            {(search || category !== "all" || sort !== "default") && (
+            {(search ||
+              category !== "all" ||
+              sort !== "default") && (
               <button
                 type="button"
                 onClick={resetFilters}
@@ -423,6 +442,7 @@ function PostContent() {
               </p>
 
               <Button
+                type="button"
                 onClick={resetFilters}
                 className="mt-5 gap-2 bg-violet-600 hover:bg-violet-700"
               >
